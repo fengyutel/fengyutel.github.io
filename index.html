@@ -1,44 +1,78 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>网站维护中</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            text-align: center;
-            padding: 20px;
-            background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-        }
-        p {
-            font-size: 1.2em;
-            line-height: 1.6;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>弹窗通知 —— 风羽工作室</title>
+<style>
+  /* 弹窗样式 */
+  .modal {
+    display: flex; /* 直接显示 */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 弹窗内容样式 */
+  .modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  /* 按钮样式 */
+  .modal-button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  .modal-button:hover {
+    background-color: #45a049;
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1>维护通知</h1>
-        <p>我们的网站目前正在进行维护和升级。我们为此带来的不便深表歉意。</p>
-        <p>请稍后再回来查看，我们将很快回来，并且会带着全新面貌和更多功能。</p>
-        <p>感谢您的耐心和理解。</p>
-        <h1>感谢。</h1>
-    
-    </div>
+
+<!-- 弹窗 -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <h1>计划通知</h1>
+    <p>大家好，我是风羽，现在正在设计这个网站的内容，是一个资源分享网站，也是感谢大家的支持和访问</p>
+    <p>如有建议请发生至 hdsesec@outlook.com   谢谢</p>
+    <!-- 同意按钮 -->
+    <button class="modal-button" id="agreeBtn">我已同意</button>
+  </div>
+</div>
+
+<script>
+// 获取同意按钮
+var agreeBtn = document.getElementById("agreeBtn");
+
+// 点击同意按钮后执行的操作
+agreeBtn.onclick = function() {
+  // 弹出警告框
+  alert('谢谢支持🥰！');
+  
+  // 跳转到新页面
+  window.location.href = 'wh.html';
+}
+</script>
+
 </body>
 </html>
