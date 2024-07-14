@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会员内容</title>
+</head>
+<body>
+    <h1>欢迎，专属会员！</h1>
+    <p>这是您的专属内容。</p>
+    
+    <script>
+        // 检查是否通过登录页面跳转过来
+        if (!localStorage.getItem('memberLogin')) {
+            window.location.href = '/login.html';
+        }
+    </script>
+</body>
+</html>
